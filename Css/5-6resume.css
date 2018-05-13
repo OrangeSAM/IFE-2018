@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+}
+.content-left{
+    float: left;
+    width: 30%;
+    background-color: lightblue;
+    height: 500px;
+    text-align: center;
+}
+.content-left h1{
+    color: white;
+}
+.content-right{
+    float: left;
+    width: 60%;
+    margin-left: 10px;
+}

@@ -1,0 +1,12 @@
+tr th:nth-child(2){
+    text-align: left
+}
+tr th:nth-child(1){
+    background-color: bisque
+}
+tr th:only-child{
+    background-color: burlywood;
+}
+th{
+    padding: 5px;
+}
