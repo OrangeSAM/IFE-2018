@@ -4,45 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Layout</title>
+    <title>kinds of layout way</title>
     <style>
-        body{
-            width: 90%;
-            margin: 0;
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
         }
-        head{
+        .floatway{
+            width: 50%;
+        }
+        .floatway .left{
+            float: left;
+            width: 30%;
+            background-color: brown;
+        }
+        .floatway .right{
+            float: right;
+            width: 70%;
+            background-color: bisque;
+        }
+        .positionway{
+            margin-top: 50px;
+            width: 50%;
+            position: relative;
+        }
+        .positionway .left{
+            position: absolute;
+            left: 0;
+            width: 30%;
             background-color: antiquewhite;
         }
-        head div{
-            width: 960px;
+        .positionway .right{
+            position: absolute;
+            right: 0;
+            width: 70%;
+            background-color: burlywood;
         }
-        head div ul{
-            float: right;
+        .flexway{
+            width: 50%;
+            margin-top: 100px;
+            display: flex;
+        }
+        .flexway .left{
+            flex: 3;
+            background-color: aquamarine;
+        }
+        .flexway .right{
+            flex: 7;
+            background-color: cornsilk;
         }
     </style>
 </head>
 <body>
-    <!-- 头部 -->
-    <head>
-        <div>
-            <span>logo</span>
-            <ul>
-                <li><a href="#">Github</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </div>
-    </head>
-    <div>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
+    <h1>两栏式布局</h1>
+    <h3>in float way</h3>
+    <div class="floatway clearfix">
+        <div class="left">我是以浮动方式实现两栏式布局的左半部分</div>
+        <div class="right">我是以浮动方式实现两栏式布局的右半部分</div>
     </div>
-    <main>
-        
-    </main>
+    <div class="positionway">
+        <div class="left">我是以pisition方式实现两栏式布局的左半部分</div>
+        <div class="right">我是以pisition方式实现两栏式布局的右半部分</div>
+    </div>
+    <div class="flexway">
+        <div class="left">我是以flex方式实现的两栏式布局的左半部分</div>
+        <div class="right">我是以flex方式实现的两栏式布局的右半部分</div>
+    </div>
 </body>
 </html>
