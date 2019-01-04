@@ -1,75 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>kinds of layout way</title>
     <style>
-        .clearfix::after{
+        .clearfix::after {
             content: '';
             display: block;
             clear: both;
         }
-        .floatway{
+
+        .first {
             width: 50%;
         }
-        .floatway .left{
+
+        .first .floatway .left {
             float: left;
             width: 30%;
             background-color: brown;
         }
-        .floatway .right{
+
+        .first .floatway .right {
             float: right;
             width: 70%;
             background-color: bisque;
         }
-        .positionway{
+
+        .first .positionway {
             margin-top: 50px;
-            width: 50%;
             position: relative;
         }
-        .positionway .left{
+
+        .first .positionway .left {
             position: absolute;
             left: 0;
             width: 30%;
             background-color: antiquewhite;
         }
-        .positionway .right{
+
+        .first .positionway .right {
             position: absolute;
             right: 0;
             width: 70%;
             background-color: burlywood;
         }
-        .flexway{
-            width: 50%;
-            margin-top: 100px;
+
+        .first .flexway {
+            margin-top: 125px;
             display: flex;
         }
-        .flexway .left{
+
+        .first .flexway .left {
             flex: 3;
             background-color: aquamarine;
         }
-        .flexway .right{
+
+        .first .flexway .right {
             flex: 7;
             background-color: cornsilk;
         }
+
+        .second {
+            width: 50%;
+        }
+
+        .second .floatway .left {
+            width: 300px;
+            float: left;
+            background-color: cyan;
+        }
+
+        .second .floatway .right {
+            background-color: dimgray;
+            margin-left: 300px;
+            /* 这样就不会因为流的效果而在宽度过小的时候溢出到左边 */
+        }
+
+        .second .positionway {
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .second .positionway .left {
+            position: absolute;
+            left: 0;
+            width: 300px;
+            background-color: dimgrey;
+        }
+
+        .second .positionway .right {
+            position: absolute;
+            right: 0;
+            margin-left: 300px;
+            /* 这样就不会因为宽度缩小时而遮盖左侧 */
+            background-color: darkturquoise;
+        }
+
+        .second .flexway {
+            margin-top: 100px;
+            display: flex;
+        }
+
+        .second .flexway .left {
+            width: 300px;
+            background-color: lightblue;
+        }
+
+        .second .flexway .right {
+            flex: 1;
+            background-color: darkviolet;
+        }
+
+        .third {
+            width: 50%;
+        }
+
+        .third .floatway .left {
+            width: 200px;
+            float: left;
+            background-color: lightcoral;
+        }
+
+        .third .floatway .center {
+            background-color: darkolivegreen;
+            margin: 0 200px;
+        }
+
+        .third .floatway .right {
+            width: 200px;
+            float: right;
+            background-color: cornflowerblue;
+        }
+
+        .third .positionway {
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .third .positionway .left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            background-color: deepskyblue;
+        }
+
+        .third .positionway .right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 200px;
+            background-color: khaki;
+        }
+
+        .third .positionway .center {
+            background-color: firebrick;
+            margin: 0 200px;
+        }
+
+        .third .flexway {
+            display: flex;
+            margin-top: 65px;
+        }
+
+        .third .flexway .left {
+            width: 200px;
+            background-color: goldenrod;
+        }
+
+        .third .flexway .right {
+            width: 200px;
+            background-color: darksalmon;
+        }
+
+        .third .flexway .center {
+            flex: 1;
+            background-color: moccasin;
+        }
+
+        .fourth {
+            width: 50%;
+        }
+
+        .fourth .floatway .left {
+            float: left;
+            background-color: limegreen;
+            width: 200px;
+        }
+
+        .fourth .floatway .center {
+            float: left;
+            width: 200px;
+            background-color: blanchedalmond;
+        }
+
+        .fourth .floatway .right {
+            margin-left: 400px;
+            background-color: brown;
+        }
+
+        .fourth .positionway {
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .fourth .positionway .left {
+            position: absolute;
+            width: 200px;
+            left: 0;
+            background-color: bisque;
+        }
+
+        .fourth .positionway .center {
+            position: absolute;
+            width: 200px;
+            left: 200px;
+            background-color: crimson;
+        }
+
+        .fourth .positionway .right {
+            position: absolute;
+            right: 0;
+            margin-left: 400px;
+            background-color: darkred;
+        }
+
+        .fourth .flexway {
+            display: flex;
+            margin-top: 150px;
+        }
+
+        .fourth .flexway .left {
+            width: 200px;
+            background-color: aquamarine;
+        }
+
+        .fourth .flexway .center {
+            width: 200px;
+            background-color: crimson;
+        }
+
+        .fourth .flexway .right {
+            flex: 1;
+            background-color: chocolate;
+        }
+        .first,.second,.third,.fourth{
+            margin-bottom: 100px;
+        }
     </style>
 </head>
+
 <body>
-    <h1>两栏式布局</h1>
-    <h3>in float way</h3>
-    <div class="floatway clearfix">
-        <div class="left">我是以浮动方式实现两栏式布局的左半部分</div>
-        <div class="right">我是以浮动方式实现两栏式布局的右半部分</div>
+    <div class="first">
+        <h1>一 两栏式布局,左侧占30%宽度,右侧占70%宽度</h1>
+        <div class="floatway clearfix">
+            <div class="left">我是以float方式实现两栏式布局的左半部分</div>
+            <div class="right">我是以float方式实现两栏式布局的右半部分</div>
+        </div>
+        <div class="positionway">
+            <div class="left">我是以pisition方式实现两栏式布局的左半部分</div>
+            <div class="right">我是以pisition方式实现两栏式布局的右半部分</div>
+        </div>
+        <div class="flexway">
+            <div class="left">我是以flex方式实现的两栏式布局的左半部分</div>
+            <div class="right">我是以flex方式实现的两栏式布局的右半部分</div>
+        </div>
     </div>
-    <div class="positionway">
-        <div class="left">我是以pisition方式实现两栏式布局的左半部分</div>
-        <div class="right">我是以pisition方式实现两栏式布局的右半部分</div>
+
+    <div class="second">
+        <h1>二 两栏式布局，左侧定宽,右侧自适应</h1>
+        <div class="floatway clearfix">
+            <div class="left">我是以float方式实现左侧定宽式两栏布局的左侧</div>
+            <div class="right">我是以float方式实现左侧定宽式两栏布局的右侧</div>
+        </div>
+        <div class="positionway">
+            <div class="left">我是以position方式实现左侧定宽式两栏布局的左侧</div>
+            <div class="right">我是以position方式实现左侧定宽式两栏布局的右侧</div>
+        </div>
+        <div class="flexway">
+            <div class="left">我是以flex方式实现左侧定宽式两栏布局的左侧</div>
+            <div class="right">我是以flex方式实现左侧定宽式两栏布局的右侧</div>
+        </div>
     </div>
-    <div class="flexway">
-        <div class="left">我是以flex方式实现的两栏式布局的左半部分</div>
-        <div class="right">我是以flex方式实现的两栏式布局的右半部分</div>
+
+    <div class="third">
+        <h1>三 三栏式布局，左右定宽，中间自适应</h1>
+        <div class="floatway clearfix">
+            <div class="left">我是以float方式实现三栏式布局的左半部分</div>
+            <div class="right">我是以float方式实现三栏式布局的右半部分</div>
+            <div class="center">我是以float方式实现三栏式布局的中间自适应部分</div>
+        </div>
+        <div class="positionway">
+            <div class="left">我是以position实现三栏式布局的左半部分</div>
+            <div class="center">我是以position实现三栏式布局的中间自适应部分</div>
+            <div class="right">我是以position实现三栏式布局的右半部分</div>
+        </div>
+        <div class="flexway">
+            <div class="left">我是以flex方式实现三栏式布局的左半部分</div>
+            <div class="center">我是以flex方式实现三栏式布局的中间部分</div>
+            <div class="right">我是以flex方式实现三栏式布局的右半部分</div>
+        </div>
+    </div>
+
+    <div class="fourth">
+        <h1>四 三栏式布局,左侧和中间定宽,右侧自适应</h1>
+        <div class="floatway clearfix">
+            <div class="left">我是以float方式实现三栏式布局的左侧定宽部分</div>
+            <div class="center">我是以float方式实现三栏式布局的中间定宽部分</div>
+            <div class="right">我是以float方式实现三栏式布局的右侧自适应部分</div>
+        </div>
+        <div class="positionway">
+            <div class="left">我是以positionway实现三栏式布局的左侧定宽部分</div>
+            <div class="center">我是以positionway实现三栏式布局的中间定宽部分</div>
+            <div class="right">我是以positionway实现三栏式布局的右侧自适应部分</div>
+        </div>
+        <div class="flexway">
+            <div class="left">我是以flexway实现三栏式布局的左侧定宽部分</div>
+            <div class="center">我是以flexwway实现三栏式布局的中间定宽部分</div>
+            <div class="right">我是以flexway实现三栏式布局的右侧自适应部分</div>
+        </div>
     </div>
 </body>
+
 </html>
