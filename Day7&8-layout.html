@@ -13,9 +13,6 @@
             clear: both;
         }
 
-        .first {
-            width: 50%;
-        }
 
         .first .floatway .left {
             float: left;
@@ -63,9 +60,6 @@
             background-color: cornsilk;
         }
 
-        .second {
-            width: 50%;
-        }
 
         .second .floatway .left {
             width: 300px;
@@ -114,9 +108,6 @@
             background-color: darkviolet;
         }
 
-        .third {
-            width: 50%;
-        }
 
         .third .floatway .left {
             width: 200px;
@@ -181,10 +172,6 @@
             background-color: moccasin;
         }
 
-        .fourth {
-            width: 50%;
-        }
-
         .fourth .floatway .left {
             float: left;
             background-color: limegreen;
@@ -247,80 +234,86 @@
             flex: 1;
             background-color: chocolate;
         }
-        .first,.second,.third,.fourth{
+
+        .first,
+        .second,
+        .third,
+        .fourth {
             margin-bottom: 100px;
         }
     </style>
 </head>
 
 <body>
-    <div class="first">
-        <h1>一 两栏式布局,左侧占30%宽度,右侧占70%宽度</h1>
-        <div class="floatway clearfix">
-            <div class="left">我是以float方式实现两栏式布局的左半部分</div>
-            <div class="right">我是以float方式实现两栏式布局的右半部分</div>
+    <div style="width:80%;margin: 0 auto;">
+        <div class="first">
+            <h1>一 两栏式布局,左侧占30%宽度,右侧占70%宽度</h1>
+            <div class="floatway clearfix">
+                <div class="left">我是以float方式实现两栏式布局的左半部分</div>
+                <div class="right">我是以float方式实现两栏式布局的右半部分</div>
+            </div>
+            <div class="positionway">
+                <div class="left">我是以pisition方式实现两栏式布局的左半部分</div>
+                <div class="right">我是以pisition方式实现两栏式布局的右半部分</div>
+            </div>
+            <div class="flexway">
+                <div class="left">我是以flex方式实现的两栏式布局的左半部分</div>
+                <div class="right">我是以flex方式实现的两栏式布局的右半部分</div>
+            </div>
         </div>
-        <div class="positionway">
-            <div class="left">我是以pisition方式实现两栏式布局的左半部分</div>
-            <div class="right">我是以pisition方式实现两栏式布局的右半部分</div>
-        </div>
-        <div class="flexway">
-            <div class="left">我是以flex方式实现的两栏式布局的左半部分</div>
-            <div class="right">我是以flex方式实现的两栏式布局的右半部分</div>
-        </div>
-    </div>
 
-    <div class="second">
-        <h1>二 两栏式布局，左侧定宽,右侧自适应</h1>
-        <div class="floatway clearfix">
-            <div class="left">我是以float方式实现左侧定宽式两栏布局的左侧</div>
-            <div class="right">我是以float方式实现左侧定宽式两栏布局的右侧</div>
+        <div class="second">
+            <h1>二 两栏式布局，左侧定宽,右侧自适应</h1>
+            <div class="floatway clearfix">
+                <div class="left">我是以float方式实现左侧定宽式两栏布局的左侧</div>
+                <div class="right">我是以float方式实现左侧定宽式两栏布局的右侧</div>
+            </div>
+            <div class="positionway">
+                <div class="left">我是以position方式实现左侧定宽式两栏布局的左侧</div>
+                <div class="right">我是以position方式实现左侧定宽式两栏布局的右侧</div>
+            </div>
+            <div class="flexway">
+                <div class="left">我是以flex方式实现左侧定宽式两栏布局的左侧</div>
+                <div class="right">我是以flex方式实现左侧定宽式两栏布局的右侧</div>
+            </div>
         </div>
-        <div class="positionway">
-            <div class="left">我是以position方式实现左侧定宽式两栏布局的左侧</div>
-            <div class="right">我是以position方式实现左侧定宽式两栏布局的右侧</div>
-        </div>
-        <div class="flexway">
-            <div class="left">我是以flex方式实现左侧定宽式两栏布局的左侧</div>
-            <div class="right">我是以flex方式实现左侧定宽式两栏布局的右侧</div>
-        </div>
-    </div>
 
-    <div class="third">
-        <h1>三 三栏式布局，左右定宽，中间自适应</h1>
-        <div class="floatway clearfix">
-            <div class="left">我是以float方式实现三栏式布局的左半部分</div>
-            <div class="right">我是以float方式实现三栏式布局的右半部分</div>
-            <div class="center">我是以float方式实现三栏式布局的中间自适应部分</div>
+        <div class="third">
+            <h1>三 三栏式布局，左右定宽，中间自适应</h1>
+            <div class="floatway clearfix">
+                <div class="left">我是以float方式实现三栏式布局的左半部分</div>
+                <div class="right">我是以float方式实现三栏式布局的右半部分</div>
+                <div class="center">我是以float方式实现三栏式布局的中间自适应部分</div>
+            </div>
+            <div class="positionway">
+                <div class="left">我是以position实现三栏式布局的左半部分</div>
+                <div class="center">我是以position实现三栏式布局的中间自适应部分</div>
+                <div class="right">我是以position实现三栏式布局的右半部分</div>
+            </div>
+            <div class="flexway">
+                <div class="left">我是以flex方式实现三栏式布局的左半部分</div>
+                <div class="center">我是以flex方式实现三栏式布局的中间部分</div>
+                <div class="right">我是以flex方式实现三栏式布局的右半部分</div>
+            </div>
         </div>
-        <div class="positionway">
-            <div class="left">我是以position实现三栏式布局的左半部分</div>
-            <div class="center">我是以position实现三栏式布局的中间自适应部分</div>
-            <div class="right">我是以position实现三栏式布局的右半部分</div>
-        </div>
-        <div class="flexway">
-            <div class="left">我是以flex方式实现三栏式布局的左半部分</div>
-            <div class="center">我是以flex方式实现三栏式布局的中间部分</div>
-            <div class="right">我是以flex方式实现三栏式布局的右半部分</div>
-        </div>
-    </div>
 
-    <div class="fourth">
-        <h1>四 三栏式布局,左侧和中间定宽,右侧自适应</h1>
-        <div class="floatway clearfix">
-            <div class="left">我是以float方式实现三栏式布局的左侧定宽部分</div>
-            <div class="center">我是以float方式实现三栏式布局的中间定宽部分</div>
-            <div class="right">我是以float方式实现三栏式布局的右侧自适应部分</div>
-        </div>
-        <div class="positionway">
-            <div class="left">我是以positionway实现三栏式布局的左侧定宽部分</div>
-            <div class="center">我是以positionway实现三栏式布局的中间定宽部分</div>
-            <div class="right">我是以positionway实现三栏式布局的右侧自适应部分</div>
-        </div>
-        <div class="flexway">
-            <div class="left">我是以flexway实现三栏式布局的左侧定宽部分</div>
-            <div class="center">我是以flexwway实现三栏式布局的中间定宽部分</div>
-            <div class="right">我是以flexway实现三栏式布局的右侧自适应部分</div>
+        <div class="fourth">
+            <h1>四 三栏式布局,左侧和中间定宽,右侧自适应</h1>
+            <div class="floatway clearfix">
+                <div class="left">我是以float方式实现三栏式布局的左侧定宽部分</div>
+                <div class="center">我是以float方式实现三栏式布局的中间定宽部分</div>
+                <div class="right">我是以float方式实现三栏式布局的右侧自适应部分</div>
+            </div>
+            <div class="positionway">
+                <div class="left">我是以positionway实现三栏式布局的左侧定宽部分</div>
+                <div class="center">我是以positionway实现三栏式布局的中间定宽部分</div>
+                <div class="right">我是以positionway实现三栏式布局的右侧自适应部分</div>
+            </div>
+            <div class="flexway">
+                <div class="left">我是以flexway实现三栏式布局的左侧定宽部分</div>
+                <div class="center">我是以flexwway实现三栏式布局的中间定宽部分</div>
+                <div class="right">我是以flexway实现三栏式布局的右侧自适应部分</div>
+            </div>
         </div>
     </div>
 </body>
